@@ -3,9 +3,9 @@
 
 Host service on a local server by one of:
 
-  Download NodeJS on https://nodejs.org/en/
-  Run `npm install -g serve`
+  - Download NodeJS on https://nodejs.org/en/
+  - Run `npm install -g serve`
 
-  Download Python3 on https://www.python.org/downloads/
-  Run `python3 -m http.server 5000`
+  - Download Python3 on https://www.python.org/downloads/
+  - Run `python3 -m http.server 5000`
 
