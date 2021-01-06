@@ -26,10 +26,10 @@ function event_default() {
 };
 
 function event_analysis_page(){
-    card_montadora = document.getElementsByClassName('card-montadoras');
-    card_montadora[0].addEventListener('click', analysis_field_click(card_montadora[0].dataset.name));
-    card_montadora[1].addEventListener('click', analysis_field_click(card_montadora[1].dataset.name));
-    card_montadora[2].addEventListener('click', analysis_field_click(card_montadora[2].dataset.name));
+    card = document.getElementsByClassName('card-montadoras');
+    card[0].addEventListener('click', analysis_field_click(card[0].dataset.name));
+    card[1].addEventListener('click', analysis_field_click(card[1].dataset.name));
+    card[2].addEventListener('click', analysis_field_click(card[2].dataset.name));
 };
 
 function analysis_page_click(event_label) {
@@ -38,19 +38,19 @@ function analysis_page_click(event_label) {
 };
 
 function event_about_page(){
-    form_contato = document.getElementsByClassName('contato')[0]
+    form_contact = document.getElementsByClassName('contato')[0]
 
-    form_contato[0].addEventListener('blur', form_field_fill());
-    form_contato[1].addEventListener('blur', form_field_fill());
-    form_contato[2].addEventListener('blur', form_field_fill());
+    form_contact[0].addEventListener('blur', form_field_fill(form_contact.id));
+    form_contact[1].addEventListener('blur', form_field_fill(form_contact.id));
+    form_contact[2].addEventListener('blur', form_field_fill(form_contact.id));
 
-    form_contato[4].addEventListener('submit', function () {
+    form_contact[4].addEventListener('submit', function () {
         console.log('Sobre event sent');
         ga('send', 'event', 'contato', 'enviado', 'enviado');
     });
 };
 
-function form_field_fill(){
+function form_field_fill(event_action){
     console.log('Sobre event sent');
-    ga('send', 'event', 'contato', form_contato.id, 'preencheu');
+    ga('send', 'event', 'contato', event_action, 'preencheu');
 };
