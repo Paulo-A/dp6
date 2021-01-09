@@ -1,5 +1,5 @@
-# case-dp6
-## Repository for DP6's hiring process case.
+# dp6
+## Repository for DP6's case.
 
 Host service on a local server by one of:
 
