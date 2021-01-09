@@ -27,9 +27,9 @@ function eventDefault() {
 
 function eventAnalysisPage(){
     const card = document.getElementsByClassName('card-montadoras');
-    card[0].addEventListener('click', analysisFieldClick(card[0].dataset.name));
-    card[1].addEventListener('click', analysisFieldClick(card[1].dataset.name));
-    card[2].addEventListener('click', analysisFieldClick(card[2].dataset.name));
+    card[0].addEventListener('click', () => analysisFieldClick(card[0].dataset.name));
+    card[1].addEventListener('click', () => analysisFieldClick(card[1].dataset.name));
+    card[2].addEventListener('click', () => analysisFieldClick(card[2].dataset.name));
 };
 
 function analysisFieldClick(event_label) {
@@ -38,14 +38,15 @@ function analysisFieldClick(event_label) {
 };
 
 function eventAboutPage(){
-    const formContact = document.getElementsByClassName('contato')[0]
+    const formContact = document.getElementsByClassName('contato')[0];
 
-    formContact[0].addEventListener('blur', formFieldFill(formContact.id));
-    formContact[1].addEventListener('blur', formFieldFill(formContact.id));
-    formContact[2].addEventListener('blur', formFieldFill(formContact.id));
+    formContact[0].addEventListener('blur', () => formFieldFill(formContact.id));
+    formContact[1].addEventListener('blur', () => formFieldFill(formContact.id));
+    formContact[2].addEventListener('blur', () => formFieldFill(formContact.id));
 
-    formContact[4].addEventListener('submit', function () {
-        console.log('Sobre event sent');
+    formContact.addEventListener('submit', function (evt) {
+        evt.preventDefault();
+        console.log('Sobre submit event sent');
         ga('send', 'event', 'contato', 'enviado', 'enviado');
     });
 };
