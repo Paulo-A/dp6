@@ -15,12 +15,10 @@ eventDefault();
 
 function eventDefault() {
     document.getElementsByClassName('menu-lista-contato')[0].addEventListener('click', function(){
-        console.log('Contato event sent');
         ga('send', 'event', 'menu', 'entre_em_contato', 'link_externo');
     });
 
     document.getElementsByClassName('menu-lista-download')[0].addEventListener('click', function () {
-        console.log('Download event sent');
         ga('send', 'event', 'menu', 'download_pdf', 'download_pdf');
     });
 };
@@ -33,7 +31,6 @@ function eventAnalysisPage(){
 };
 
 function analysisFieldClick(event_label) {
-    console.log('Analise event sent');
     ga('send', 'event', 'analise', 'ver_mais', event_label);
 };
 
@@ -44,14 +41,11 @@ function eventAboutPage(){
     formContact[1].addEventListener('blur', () => formFieldFill(formContact.id));
     formContact[2].addEventListener('blur', () => formFieldFill(formContact.id));
 
-    formContact.addEventListener('submit', function (evt) {
-        evt.preventDefault();
-        console.log('Sobre submit event sent');
+    formContact.addEventListener('submit', function () {
         ga('send', 'event', 'contato', 'enviado', 'enviado');
     });
 };
 
 function formFieldFill(event_action){
-    console.log('Sobre event sent');
     ga('send', 'event', 'contato', event_action, 'preencheu');
 };
